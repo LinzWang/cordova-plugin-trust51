@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="org.wware.trust52" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>wware52trust</name>
+    <js-module name="wware52trust" src="www/wware52trust.js">
+        <clobbers target="cordova.plugins.wware52trust" />
+    </js-module>
+    <platform name="android">
+	    <framework src="src/android/wware52trust.gradle" custom="true" type="gradleReference" />
+	    <resource-file src="src/android/arm64-v8a/libclientalg.so" target="libs/arm64-v8a" />
+	    <resource-file src="src/android/armeabi/libclientalg.so" target="libs/armeabi" />
+	    <resource-file src="src/android/armeabi-v7a/libclientalg.so" target="libs/armeabi-v7a" />
+	    <resource-file src="src/android/x86/libclientalg.so" target="libs/x86" />
+	    <resource-file src="src/android/mips/libclientalg.so" target="libs/mips"/>
+	    <resource-file src="src/android/x86_64/libclientalg.so" target="libs/x86_64" />
+	    <resource-file src="src/android/doctor-sdk.aar" target="libs" />
+      <source-file src="src/android/org/wware/trust52/wware52trust.java" target-dir="src/org/wware/trust52" />
+      <config-file target="res/xml/config.xml" parent="/*" >
+            <feature name="wware52trust">
+                    <param name="android-package" value="org.wware.trust52.wware52trust"/>
+           </feature>
+    </config-file>
+    </platform>
+    <platform name="ios">
+      <config-file target="config.xml" parent="/*">
+        <feature name="wware52trust">
+            <param name="ios-package" value="CDVwware52trust" />
+        </feature>
+    </config-file>
+    <header-file src="src/ios/CDVwware52trust.h" />
+    <source-file src="src/ios/CDVwware52trust.m" />
+    <resource-file src="src/ios/Signet-SDK-Bundle.bundle" />
+    <framework src="src/ios/BjcaSignSDK.framework" custom="true"/>
+    </platform>
+</plugin>

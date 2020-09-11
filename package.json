@@ -1,0 +1,14 @@
+{
+  "name": "wware52trust",
+  "version": "1.0.1",
+  "description": "",
+  "cordova":{
+"id":"org.wware.trust52",
+"platforms":["android"]
+},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

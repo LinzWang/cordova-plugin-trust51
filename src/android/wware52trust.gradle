@@ -1,0 +1,34 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+}
+repositories {
+    mavenCentral()
+    jcenter()
+    maven { url 'https://jitpack.io' }
+    flatDir {
+      dirs 'src/main/libs'
+   }
+}
+dependencies {
+    implementation 'com.android.support:appcompat-v7:+'
+    implementation 'com.android.support:support-v4:+'
+    implementation(name:'doctor-sdk', ext:'aar')
+    implementation 'com.google.code.gson:gson:2.3.1'
+}
+android {
+   defaultConfig {
+       vectorDrawables.useSupportLibrary = true
+   }
+   sourceSets {
+	main {
+	    jniLibs.srcDirs = ['src/main/libs']
+	}
+   }
+   packagingOptions {
+       exclude 'META-INF/NOTICE'
+       exclude 'META-INF/LICENSE'
+   }
+}
